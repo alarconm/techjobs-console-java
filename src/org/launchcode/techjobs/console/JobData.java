@@ -64,7 +64,7 @@ public class JobData {
 
         for (HashMap<String, String> job : allJobs) {
 
-            String valueCheck = job.toString().toLowerCase();
+            String valueCheck = job.values().toString().toLowerCase();
 
             if(valueCheck.contains(value.toLowerCase())) {
                 jobs.add(job);

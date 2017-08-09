@@ -118,12 +118,12 @@ public class TechJobs {
 
         //add nested loops to print out each item
         for(int i = 0; i < someJobs.size(); i++) {
-            System.out.println("\n*****");
+            System.out.println("*****");
 
             for(Map.Entry<String, String> job : someJobs.get(i).entrySet() ) {
                 System.out.println(job.getKey() + ": " + job.getValue());
             }
-            System.out.println("*****");
+            System.out.println("*****\n");
 
         }
     }
