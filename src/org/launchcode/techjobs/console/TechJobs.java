@@ -1,9 +1,6 @@
 package org.launchcode.techjobs.console;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -46,8 +43,11 @@ public class TechJobs {
 
                     System.out.println("\n*** All " + columnChoices.get(columnChoice) + " Values ***");
 
+                    //Sort the list
+                    Collections.sort(results);
                     // Print list of skills, employers, etc
                     for (String item : results) {
+
                         System.out.println(item);
                     }
                 }

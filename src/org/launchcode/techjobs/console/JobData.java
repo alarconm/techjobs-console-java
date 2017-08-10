@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.console;
 
+import com.sun.xml.internal.ws.api.streaming.XMLStreamWriterFactory;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -7,10 +8,7 @@ import org.apache.commons.csv.CSVRecord;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by LaunchCode
@@ -60,15 +58,22 @@ public class JobData {
         //load data, if not already loaded
         loadData();
 
+        //Initialize empty ArrayList of hashmaps
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
+        //Iterate through each hashmap in the Arraylist allJobs
         for (HashMap<String, String> job : allJobs) {
 
+            //get current hashmap values
+            //convert them to a string
+            //convert the string to lowercase
             String valueCheck = job.values().toString().toLowerCase();
 
+            //check if job values contain the search term
             if(valueCheck.contains(value.toLowerCase())) {
                 jobs.add(job);
             }
+
         }
 
         return jobs;
