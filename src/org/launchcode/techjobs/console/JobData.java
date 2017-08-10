@@ -50,7 +50,9 @@ public class JobData {
         // load data, if not already loaded
         loadData();
 
-        return allJobs;
+        //create a copy of allJobs that can be returned so that allJobs itself isn't returned
+        ArrayList<HashMap<String, String >> copyAllJobs = new ArrayList<>(allJobs);
+        return copyAllJobs;
     }
 
     public static ArrayList<HashMap<String, String>> findByValue(String value) {
